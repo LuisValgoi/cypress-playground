@@ -35,4 +35,21 @@ describe("Playground Suite Case", () => {
     cy.viewport("iphone-8");
     cy.get("a[data-testid='homepage-cta']").invoke("width").should("be.gt", 200);
   });
+
+  it.only("Click on create a free account and assert '/register' page was loaded with the necessary fields", () => {
+    cy.visit("https://codedamn.com");
+    cy.viewport(1920, 1080);
+
+    cy.contains("Create a free account").click();
+    cy.url().should("include", "/register");
+
+    cy.contains("Sign up with Facebook").should("exist");
+    cy.contains("Sign up with Google").should("exist");
+    cy.get("input[id=name]").should("exist");
+    cy.get("input[id=username]").should("exist");
+    cy.get("input[id=email]").should("exist");
+    cy.get("input[id=password]").should("exist");
+    cy.get("input[id=password]").should("exist");
+    cy.get("button[type=submit]").should("exist");
+  });
 });
