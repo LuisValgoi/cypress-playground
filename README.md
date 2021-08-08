@@ -53,6 +53,7 @@ npx cypress run --headless
 ### RULE OF THUMB
 
 - if you are using variable declaration, you are using cypress wrong
+- all the assertion/actions/etc are happening asynchronously
 
 ### MOST COMMOM COMMANDS
 
@@ -61,6 +62,8 @@ There are several [commands to be used](https://docs.cypress.io/api/commands/and
 - `cy.visit` = Visit the given url
 - `cy.contains` = Get the DOM element containing the text (works partially as well)
 - `cy.get` = Get one or more DOM elements by node name: input, button, etc.
+- `cy.log` = Print a message to the Cypress Command Log.
+- `cy.then` = Enables you to work with the subject yielded from the previous command.
 
 ### VIEWPORT
 
