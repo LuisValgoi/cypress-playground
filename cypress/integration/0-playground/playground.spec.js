@@ -2,8 +2,8 @@
 
 describe("Playground - Desktop Suite Case", () => {
   beforeEach(() => {
-    cy.visit("https://codedamn.com");
     cy.viewport(1920, 1080);
+    cy.visit("https://codedamn.com");
   });
 
   it("Checks if the Website contains the heading title", () => {
@@ -51,12 +51,20 @@ describe("Playground - Desktop Suite Case", () => {
 
     cy.get("input[placeholder='Search anything...']").type("React");
   });
+
+  it.only("Copy and paste submit form help values", () => {
+    cy.contains("Contact Us").click();
+    cy.get("input[name=first_name]").type("Luis{ctrl}+{c}");
+    cy.get("input[name=email]").type("{ctrl}+{v}");
+    cy.get("input[name=subject]").type("{ctrl}+{v}");
+    cy.get("textarea[name=message]").type("{ctrl}+{v}");
+  });
 });
 
 describe("Playground - Mobile Suite Case", () => {
   beforeEach(() => {
-    cy.visit("https://codedamn.com");
     cy.viewport("iphone-8");
+    cy.visit("https://codedamn.com");
   });
 
   it("Asserts that the Website heading level in Iphone8 POV is filling whole space", () => {

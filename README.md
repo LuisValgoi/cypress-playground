@@ -55,7 +55,7 @@ npx cypress run --headless
 - if you are using variable declaration, you are using cypress wrong
 - all the assertion/actions/etc are happening asynchronously
 
-### MOST COMMOM COMMANDS
+### HELPER COMMANDS
 
 There are several [commands to be used](https://docs.cypress.io/api/commands/and)
 
@@ -64,6 +64,7 @@ There are several [commands to be used](https://docs.cypress.io/api/commands/and
 - `cy.get` = Get one or more DOM elements by node name: input, button, etc.
 - `cy.log` = Print a message to the Cypress Command Log.
 - `cy.then` = Enables you to work with the subject yielded from the previous command.
+- `...rightClick()` = Right-click a DOM element.
 
 ### VIEWPORT
 
