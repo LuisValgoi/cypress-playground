@@ -52,7 +52,7 @@ describe("Playground - Desktop Suite Case", () => {
     cy.get("input[placeholder='Search anything...']").type("React");
   });
 
-  it.only("Copy and paste submit form help values", () => {
+  it("Copy and paste submit form help values", () => {
     cy.contains("Contact Us").click();
     cy.get("input[name=first_name]").type("Luis{ctrl}+{c}");
     cy.get("input[name=email]").type("{ctrl}+{v}");

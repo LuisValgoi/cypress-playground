@@ -2,10 +2,6 @@
 
 - [https://www.youtube.com/watch?v=OIAzwr-_jhY&ab_channel=codedamn](https://www.youtube.com/watch?v=OIAzwr-_jhY&ab_channel=codedamn)
 
-### NOTES
-
-- Agnostic end 2 end testing framework
-
 ### MOTIVATION
 
 - to keep old features stables w/a breaking acting as a security layer
@@ -25,23 +21,19 @@
 
 ### COMMANDS
 
-- Installing
+- `npm i cypress` = Installing
 
-```bash
-npm i cypress
-```
+- `npx cypress open`= Opening Cypress Local Runner
 
-- Opening Cypress Local Runner
+- `npx cypress run --headless` = Opening Cypress Headless
 
-```bash
-npx cypress open
-```
+### NOTES
 
-- Opening Cypress Headless
-
-```bash
-npx cypress run --headless
-```
+- Agnostic end 2 end testing framework
+- if you are using variable declaration, you are using cypress wrong
+- test commands are executed in a deterministic manner.
+- this results in a flake-free testing.
+- subjects are passsed through the chain.
 
 ### FOLDERS STRUCTURES
 
@@ -50,12 +42,7 @@ npx cypress run --headless
 - `plugins` = extending default functionalities
 - `support`  = utils folder
 
-### RULE OF THUMB
-
-- if you are using variable declaration, you are using cypress wrong
-- all the assertion/actions/etc are happening asynchronously
-
-### HELPER COMMANDS
+### HELPERs
 
 There are several [commands to be used](https://docs.cypress.io/api/commands/and)
 
@@ -65,9 +52,6 @@ There are several [commands to be used](https://docs.cypress.io/api/commands/and
 - `cy.log` = Print a message to the Cypress Command Log.
 - `cy.then` = Enables you to work with the subject yielded from the previous command.
 - `...rightClick()` = Right-click a DOM element.
-
-### VIEWPORT
-
 - `cy.viewport` = sets the view port of the page when launched by runner
 
 ### ASSERT
