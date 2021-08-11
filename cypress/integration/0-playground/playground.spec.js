@@ -71,3 +71,19 @@ describe("Playground - Mobile Suite Case", () => {
     cy.get("a[data-testid='homepage-cta']").invoke("width").should("be.gt", 200);
   });
 });
+
+describe("Playground - Server Suite Case", () => {
+  it("When triggered /users API, stub and mock the response with example.json fixture", () => {
+    cy.intercept("https://localhost:8080/users", { fixture: "example.json" });
+  });
+
+  it("Triggers /settings API using aliases, intercepts and resolves with cy.wait", () => {
+    cy.intercept({ url: "http://localhost:8080/settings*", query: { q: "terms" } }).as("settings");
+    cy.wait("@settings").then((interception) => {
+      console.log(interception.response.body.data);
+    });
+    cy.wait("@settings").its("request.url").should("include", "terms");
+    cy.wait("@settings").its("response.statusCode").should("eq", 200);
+    cy.wait("@settings").its("response.body").should("include", "id");
+  });
+});
